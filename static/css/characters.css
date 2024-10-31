@@ -3,6 +3,11 @@ body {
     padding: 0;
 }
 
+h2 {
+    font-size: 40px;
+    color: rgb(83, 255, 106);
+}
+
 .character-main {
     margin-top: 20px;
     width: 85vw;
@@ -12,4 +17,72 @@ body {
     background: rgba(29,28,54,1);
     display: flex;
     justify-content: center;
+}
+
+.character-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.pagination-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.pagination-buttons button {
+    width: 15vw;
+    margin: 0 50px;
+    font-size: large;
+}
+
+tbody tr:hover {
+    background: rgb(121, 111, 255);
+    cursor: pointer;
+}
+
+th {
+    border-bottom: 1px solid rgb(196, 196, 196);
+}
+
+table {
+    width: 80vw;
+    border: 3px solid rgb(221, 221, 221);
+    background: rgb(73, 72, 122);
+    border-radius: 30px;
+    font-size: 2.7vw;
+    border-collapse: separate;
+    border-spacing: 0px 4px;
+    overflow: hidden;
+}
+
+@media all and (max-width: 699px) and (min-width: 300px) {
+    Table {
+        font-size: 20px;
+    }
+
+    button {
+        width: 150px;
+        height: 50px;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 30px;
+        
+    }
+}
+
+@media (min-width: 1151px) {
+    table {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 50px;
+    }
 }
