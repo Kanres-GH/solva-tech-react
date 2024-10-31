@@ -1,43 +1,51 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../state/store";
-import React from "react";
-import {
-    MDBBtn,
-    MDBContainer,
-    MDBRow,
-    MDBCol,
-    MDBInput
-  }
-  from 'mdb-react-ui-kit';
+import { AppDispatch, RootState } from "../state/store";
 import '../../static/css/auth.css';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import * as Yup from 'yup';
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { login } from "../state/counter/loginSlice";
 
-// import { increment } from "../state/counter/counterSlice";
-// import { decrement } from "../state/counter/counterSlice";
-// import { incrementByAmount } from "../state/counter/counterSlice";
+const validationSchema = Yup.object().shape({
+    username: Yup.string().required('Username is required'),
+    password: Yup.string().required('Password is required'),
+});
+
+interface LoginFormInputs {
+    username: string;
+    password: string;
+  }
 
 export default function Auth() {
-    const count = useSelector((state: RootState) => state.login.isLoggedOn);
-    const dispatch = useDispatch();
+
+    const isLoggedOn = useSelector((state: RootState) => state.login.isLoggedOn);
+    const dispatch = useDispatch<AppDispatch>();
+    const navigate = useNavigate();
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm<LoginFormInputs>({
+        resolver: yupResolver(validationSchema),
+      });
+
+    // const [login_info, setLoginInfo] = useState({userName: "", password: ""});
+
+    useEffect(() => {
+        if (isLoggedOn) {
+          navigate('/characters'); 
+        }
+      }, [isLoggedOn, navigate]);
+
+    
+    const onSubmit = (data: LoginFormInputs) => {
+        dispatch(login(data));
+    };
+    
     return (
-        // <MDBContainer className="my-5">
-        //     <MDBRow>
-        //         <MDBCol col='6' className="mb-5">
-        //             <div className="d-flex flex-column ms-5">
-        //                 <div className="text-center">
-        //                 <img src="https://pipedream.com/s.v0/app_mE7hlb/logo/orig"
-        //                     style={{width: '300px'}} alt="logo" />
-        //                 <h4 className="mt-1 mb-5 pb-1">Star Wars API Browser</h4>
-        //                 </div>
-        //                 <p><b>Please log in to your account</b></p>
-        //                 <MDBInput wrapperClass='mb-4' label='Login' id='form1' type='text' placeholder="abc@mail.com"  />
-        //                 <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password'/>
-        //                 <div className="text-center pt-1 mb-5 pb-1">
-        //                 <MDBBtn className="mb-4 w-100 gradient-custom-2">Sign in</MDBBtn>
-        //                 </div>
-        //             </div>
-        //         </MDBCol>
-        //     </MDBRow>
-        // </MDBContainer>
         <div className="auth-card">
             <div className="auth-main">
             
@@ -48,17 +56,20 @@ export default function Auth() {
                 </div>
                 
                 <div className="form">
-                    <form>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <input
                             type="text"
-                            placeholder="Login"
-                            
+                            placeholder="Username"
+                            {...register('username')}
                         />
+                        {errors.username && <span className="error-message">{errors.username.message}</span>}
                         <input
                             type="password"
                             placeholder="Password"
+                            {...register('password')}
                         />
-                        <button>Login</button>
+                        {errors.password && <span className="error-message">{errors.password.message}</span>}
+                        <button type="submit">Login</button>
                     </form>
                 </div>
             </div>

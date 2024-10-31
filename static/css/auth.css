@@ -29,7 +29,8 @@ h1 {
 
 hr {
     margin-top: -20px;
-    width: 70%;
+    margin-bottom: -20px;
+    width: 50%;
     opacity: 0.3;
 }
 
