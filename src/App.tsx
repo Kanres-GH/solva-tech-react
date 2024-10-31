@@ -5,6 +5,9 @@ import { useSelector } from 'react-redux';
 import { RootState } from './state/store';
 import Characters from './components/Characters';
 import AuthChecker from './components/AuthChecker';
+import CharacterDetails from './components/CharacterDetails';
+import Starships from './components/Starships';
+import Planets from './components/Planets';
 
 export default function App() {
 
@@ -19,13 +22,14 @@ export default function App() {
                     <Route path="/characters" element={
                         <AuthChecker>
                             <Characters />
-                        </AuthChecker>}
+                        </AuthChecker>
+                    }
                     />
-                    <Route path="/characters/:id" element/>
-                    <Route path="/planets" element/>
-                    <Route path="/planets/:id" element/>
-                    <Route path="/starships" element/>
-                    <Route path="/starships/:id" element/>
+                    <Route path="/characters/:id" element={<AuthChecker><CharacterDetails /></AuthChecker>} />
+                    <Route path="/planets" element={<AuthChecker><Planets /></AuthChecker>}/>
+                    <Route path="/planets/:id" element={<AuthChecker></AuthChecker>}/>
+                    <Route path="/starships" element={<AuthChecker><Starships /></AuthChecker>}/>
+                    <Route path="/starships/:id" element={<AuthChecker></AuthChecker>}/>
                 </Routes>
             </Router>
         </div>

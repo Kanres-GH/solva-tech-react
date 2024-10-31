@@ -4,14 +4,21 @@ body {
 }
 
 h2 {
-    font-size: 40px;
+    margin: 15px 0 0px;
+    /* border: 1px solid red; */
+    font-size: 36px;
     color: rgb(83, 255, 106);
+}
+
+.loading {
+    font-size: 30px;
 }
 
 .character-main {
     margin-top: 20px;
     width: 85vw;
-    height: 85vh;
+    max-width: 1320px;
+    height: 90vh;
     border: 3px solid rgb(111, 113, 136);
     border-radius: 0 0 30px 30px;
     background: rgba(29,28,54,1);
@@ -22,7 +29,7 @@ h2 {
 .character-table {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
 }
 
 .pagination-buttons {
@@ -51,15 +58,16 @@ table {
     border: 3px solid rgb(221, 221, 221);
     background: rgb(73, 72, 122);
     border-radius: 30px;
-    font-size: 2.7vw;
+    font-size: 2.3vw;
     border-collapse: separate;
     border-spacing: 0px 4px;
     overflow: hidden;
+    max-width: 1240px;
 }
 
 @media all and (max-width: 699px) and (min-width: 300px) {
-    Table {
-        font-size: 20px;
+    table {
+        font-size: 14px;
     }
 
     button {
@@ -77,12 +85,13 @@ table {
     }
 }
 
-@media (min-width: 1151px) {
+@media (min-width: 1024px) {
     table {
-        font-size: 32px;
+        font-size: 20px;
     }
 
     h2 {
         font-size: 50px;
     }
+    
 }
