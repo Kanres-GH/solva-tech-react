@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.character-main {
+    margin-top: 20px;
+    width: 85vw;
+    height: 85vh;
+    border: 3px solid rgb(111, 113, 136);
+    border-radius: 0 0 30px 30px;
+    background: rgba(29,28,54,1);
+    display: flex;
+    justify-content: center;
+}

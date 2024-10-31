@@ -24,7 +24,6 @@ h1 {
 .auth-card {
     width: 60vw;
     height: 55vh;
-    /* max-width: 55vh; */
 }
 
 hr {
@@ -45,8 +44,14 @@ form {
     width: 100%;
 }
 
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
 .auth-text {
-    /* margin-top: -50px; */
     width: 100%;
 }
 
@@ -59,10 +64,6 @@ input {
     font-size: medium;
 }
 
-/* input:focus {
-    border-color: grey;
-} */
-
 button:hover {
     border: 1px solid rgb(173, 173, 173);
 }
@@ -70,5 +71,5 @@ button:hover {
 button {
     background-color: rgb(73, 65, 148);
     width: 20%;
-    text-align: center;
+    padding: 10px 0;
 }
