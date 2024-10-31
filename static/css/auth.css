@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-bottom: 5vh;
+    margin-top: -30px;
+}
+
+.auth-main {
+    border: 1px solid rgb(41, 41, 41);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgb(63, 62, 99), rgb(17, 17, 17));
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    height: 100%;
+}
+
+.auth-card {
+    width: 60vw;
+    height: 55vh;
+    /* max-width: 55vh; */
+}
+
+hr {
+    margin-top: -20px;
+    width: 70%;
+    opacity: 0.3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.form {
+    width: 100%;
+}
+
+.auth-text {
+    /* margin-top: -50px; */
+    width: 100%;
+}
+
+input {
+    width: 60%;
+    height: 40px;
+    margin: 5px 0;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    padding: 0 10px;
+    font-size: medium;
+}
+
+/* input:focus {
+    border-color: grey;
+} */
+
+button:hover {
+    border: 1px solid rgb(173, 173, 173);
+}
+
+button {
+    background-color: rgb(73, 65, 148);
+    width: 20%;
+    text-align: center;
+}
