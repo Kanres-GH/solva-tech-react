@@ -67,7 +67,7 @@ export default function Characters() {
                     )}
                     <div className="pagination-buttons">
                         <button onClick={() => setPage((prev) => Math.max(prev - 1, 1))} disabled={page === 1}>Back</button>
-                        <button onClick={() => setPage((prev) => prev + 1)}>Next</button>
+                        <button onClick={() => setPage((prev) => prev + 1)} disabled={page === 9}>Next</button>
                     </div>
                 </div>
             </div>

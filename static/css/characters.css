@@ -29,7 +29,30 @@ h2 {
 .character-table {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
+}
+
+.character-details {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 5vh;
+    /* border: 1px solid red; */
+}
+
+.character-details-m {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
+    width: 100%;
+
+}
+
+.character-details-col {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid yellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .pagination-buttons {
@@ -58,7 +81,7 @@ table {
     border: 3px solid rgb(221, 221, 221);
     background: rgb(73, 72, 122);
     border-radius: 30px;
-    font-size: 2.3vw;
+    font-size: 2vw;
     border-collapse: separate;
     border-spacing: 0px 4px;
     overflow: hidden;

@@ -10,6 +10,10 @@ function capitalize(val : any) {
 export default function CharacterDetails() {
     const { id } = useParams();
     const [character, setCharacter] = useState(null);
+    const [homeworld, setHomeworld] = useState<string | null>(null);
+    const [films, setFilms] = useState<any[]>([]);
+    const [species, setSpecies] = useState<string | null>(null);
+    const [starships, setStarships] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -28,7 +32,7 @@ export default function CharacterDetails() {
         fetchCharacter();
     }, [id]);
 
-    const formatData = (data : any) => data === "unknown" ? "N/A" : data;
+    const formatData = (data : any) => data === "unknown" || data === "n/a" ? "N/A" : data;
 
     return (
         <div>
@@ -37,15 +41,25 @@ export default function CharacterDetails() {
             {loading ? (
                 <p>Loading...</p>
             ) : character ? (
-                <div>
+                <div className='character-details'>
                     <h2>{character['name']}</h2>
-                    <p>Height: {formatData(character['height'])}</p>
-                    <p>Mass: {formatData(character['mass'])}</p>
-                    <p>Hair Color: {formatData(character['hair_color'])}</p>
-                    <p>Skin Color: {formatData(character['skin_color'])}</p>
-                    <p>Eye Color: {formatData(character['eye_color'])}</p>
-                    <p>Birth Year: {formatData(character['birth_year'])}</p>
-                    <p>Gender: {capitalize(formatData(character['gender']))}</p>
+                    <div className='character-details-m'>
+                        <div className='character-details-col'>
+                            <p>Height: {formatData(character['height'])}</p>
+                            <p>Mass: {formatData(character['mass'])}</p>
+                            <p>Hair Color: {capitalize(formatData(character['hair_color']))}</p>
+                            <p>Skin Color: {capitalize(formatData(character['skin_color']))}</p>
+                            <p>Eye Color: {capitalize(formatData(character['eye_color']))}</p>
+                            <p>Birth Year: {formatData(character['birth_year'])}</p>
+                            <p>Gender: {capitalize(formatData(character['gender']))}</p>
+                        </div>
+                        <div className='character-details-col'>
+                            <p>Homeworld: </p>
+                            <p>Films: </p>
+                            <p>Species: </p>
+                            <p>Starships: </p>
+                        </div>
+                    </div>
                 </div>
             ) : (
                 <p>Character not found</p>

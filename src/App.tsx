@@ -8,6 +8,8 @@ import AuthChecker from './components/AuthChecker';
 import CharacterDetails from './components/CharacterDetails';
 import Starships from './components/Starships';
 import Planets from './components/Planets';
+import PlanetDetails from './components/PlanetDetails';
+import StarshipDetails from './components/StarshipDetails';
 
 export default function App() {
 
@@ -19,17 +21,12 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={isLoggedOn ? <Navigate to="/characters" /> : <Auth />} />
                     <Route path="/login" element={<Auth />} />
-                    <Route path="/characters" element={
-                        <AuthChecker>
-                            <Characters />
-                        </AuthChecker>
-                    }
-                    />
+                    <Route path="/characters" element={<AuthChecker><Characters /></AuthChecker>} />
                     <Route path="/characters/:id" element={<AuthChecker><CharacterDetails /></AuthChecker>} />
                     <Route path="/planets" element={<AuthChecker><Planets /></AuthChecker>}/>
-                    <Route path="/planets/:id" element={<AuthChecker></AuthChecker>}/>
+                    <Route path="/planets/:id" element={<AuthChecker><PlanetDetails /></AuthChecker>}/>
                     <Route path="/starships" element={<AuthChecker><Starships /></AuthChecker>}/>
-                    <Route path="/starships/:id" element={<AuthChecker></AuthChecker>}/>
+                    <Route path="/starships/:id" element={<AuthChecker><StarshipDetails /></AuthChecker>}/>
                 </Routes>
             </Router>
         </div>
