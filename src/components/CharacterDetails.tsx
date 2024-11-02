@@ -116,8 +116,8 @@ export default function CharacterDetails() {
                                 <h3 style={{margin: 0}}>Starships:</h3>
                                 <ul className='ch-ul'>
                                     {starships.length > 0 ? starships.map(starship => (
-                                        <li key={starship.url}>
-                                            <span onClick={() => navigate(`/starships/${getIdFromUrl(starship.url)}`)} style={{cursor: 'pointer'}}>
+                                        <li  style={{cursor: 'pointer'}} key={starship.url} onClick={() => navigate(`/starships/${getIdFromUrl(starship.url)}`)}>
+                                            <span>
                                                {starship.name}
                                             </span>
                                         </li>

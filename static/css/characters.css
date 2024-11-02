@@ -49,7 +49,7 @@ h2 {
     background: #15111a;
     /* height: 55%; */
     width: 100%;
-
+    height: auto;
 }
 
 .ch-col-2 {
@@ -72,6 +72,7 @@ h2 {
     font-size: 2vw;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 0;
 }
 
 .ch-info span {
@@ -128,7 +129,9 @@ table {
     display: flex;
     width: 100%;
     /* flex-wrap: wrap; */
+    overflow: auto;
     justify-content: space-evenly;
+    /* flex-wrap: wrap; */
     /* height: 200px; */
     /* border: 1px solid red; */
 }
@@ -137,9 +140,8 @@ table {
     display: flex;
     justify-content: center;
     cursor: unset;
-    /* width: 5vw; */
-    width: 100%;
-    font-size: 10px;
+    width: auto;
+    font-size: 14px;
     /* border: 1px solid red; */
     
 }
@@ -150,9 +152,9 @@ table {
     }
 
     button {
-        width: 150px;
-        height: 50px;
-        font-size: 24px;
+        width: 130px;
+        height: 50x;
+        font-size: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -164,7 +166,8 @@ table {
 
     .ch-ul li {
         display: flex;
-        font-size: 1.5vw;
+        /* font-size: 1.5vw; */
+        font-size: 12px;
         width: 100%;
     }
 
@@ -190,7 +193,8 @@ table {
     .ch-ul li {
         width: 100%;
         display: flex;
-        font-size: 1.2vw;
+        font-size: 16px;
+        /* flex-wrap: wrap; */
         /* border: 1px solid red; */
     }
 }
@@ -198,7 +202,8 @@ table {
 @media (max-width: 599px) {
     .ch-ul li {
         display: flex;
-        font-size: 1.5vw;
+        /* font-size: 1.5vw; */
+        font-size: 12px;
         width: 100%;
         /* border: 1px solid red; */
     }
@@ -224,7 +229,6 @@ table {
     .ch-ul li {
         width: 100%;
         display: flex;
-        font-size: 0.93vw;
-        width: 100%;
+        font-size: 16px;
     }
 }
