@@ -36,7 +36,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     width: 90%;
-    gap: 5vh;
+    /* gap: 4vh; */
     /* border: 1px solid red; */
 }
 
@@ -69,10 +69,9 @@ h2 {
 .ch-info {
     /* border: 1px solid red; */
     width: 100%;
-    font-size: 2vw;
+    font-size: 1.5vw;
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 0;
 }
 
 .ch-info span {
@@ -83,9 +82,9 @@ h2 {
 .ch-dt-films {
     display: flex;
     flex-direction: column;
-    /* height: 100%; */
+    /* height: 100px; */
     /* border: 1px solid yellow; */
-    border-bottom: 3px solid rgb(138, 109, 109);;
+    border-bottom: 3px solid rgb(138, 109, 109);
 }
 
 .character-details-col p {
@@ -113,6 +112,14 @@ th {
     border-bottom: 1px solid rgb(196, 196, 196);
 }
 
+.edit-btns {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
 table {
     width: 80vw;
     border: 3px solid rgb(221, 221, 221);
@@ -133,6 +140,7 @@ table {
     justify-content: space-evenly;
     /* flex-wrap: wrap; */
     /* height: 200px; */
+    margin: 0 0 15px;
     /* border: 1px solid red; */
 }
 
@@ -167,13 +175,12 @@ table {
     .ch-ul li {
         display: flex;
         /* font-size: 1.5vw; */
-        font-size: 12px;
+        font-size: 14px;
         width: 100%;
     }
 
     .ch-info {
-        font-size: 12px;
-        width: 100%;
+        font-size: 13px;
     }
 }
 
@@ -187,7 +194,7 @@ table {
     }
 
     .ch-info p {
-        font-size: 1.5vw;
+        font-size: 20px;
     }
 
     .ch-ul li {
@@ -207,6 +214,10 @@ table {
         width: 100%;
         /* border: 1px solid red; */
     }
+
+    .ch-info p {
+        font-size: 10px;
+    }
 }
 
 @media (min-width: 1721px) {
@@ -223,7 +234,7 @@ table {
     }
 
     .ch-info p {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .ch-ul li {
