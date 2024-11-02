@@ -5,10 +5,6 @@ import Navbar from './Navbar';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
-function capitalize(val: any) {
-    return String(val).charAt(0).toUpperCase() + String(val).slice(1);
-}
-
 export default function StarshipDetails() {
     const { id } = useParams();
     const navigate = useNavigate();
